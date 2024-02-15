@@ -4,6 +4,7 @@ import { GoGoal } from 'react-icons/go';
 import { RiSurveyFill } from 'react-icons/ri';
 import { FaHistory } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 const Dashboard = () => {
     const menus =[
@@ -14,7 +15,7 @@ const Dashboard = () => {
     ];
 
   return (
-    <section className='flex gap-6'>
+    <section className='flex'>
         <div className={`bg-[#0F1035] min-h-screen ${
             open ? "w-72" : "w-16"
             } duration-500 text-white px-4`}>
@@ -36,9 +37,6 @@ const Dashboard = () => {
                     ))}
                 </div>
             </div>
-        </div>
-        <div className='m-3 text-xl text-gray-900 font-semibold'>
-            React Tailwind
         </div>
     </section>
   )

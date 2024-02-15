@@ -6,15 +6,21 @@ import NotFound from "./views/NotFound";
 import DefaultLayout from "./components/DefaultLayout";
 import GuestLayout from "./components/GuestLayout";
 import SideBar from "./views/SideBar";
+import Header from "./views/Header";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <SideBar />,
+        element: <DefaultLayout />,
         children: [
             {
                 path: '/sidebar',
                 element: <SideBar />
+            },
+
+            {
+                path: '/header',
+                element: <Header />
             },
         ]
     },

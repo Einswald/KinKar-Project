@@ -4,14 +4,13 @@ import { GoGoal } from 'react-icons/go';
 import { RiSurveyFill } from 'react-icons/ri';
 import { FaHistory } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import Header from './Header';
 
-const Dashboard = () => {
+const SideBar = () => {
     const menus =[
         {name:"Dashboard",link:'/',icon: MdDashboard},
-        {name:"Goals",link:'/',icon: GoGoal, margin: true},
-        {name:"Survei",link:'/',icon: RiSurveyFill},
-        {name:"Historys",link:'/',icon: FaHistory },
+        {name:"Goals",link:'/goals',icon: GoGoal, margin: true},
+        {name:"Surveys",link:'/surveys',icon: RiSurveyFill},
+        {name:"Historys",link:'/historys',icon: FaHistory },
     ];
 
   return (
@@ -25,7 +24,7 @@ const Dashboard = () => {
                 </div>
                 <div className='mt-4 flex flex-col gap-4 relative'>
                     {menus?.map((menu, i) => (
-                        <Link to={"menu?.link"}
+                        <Link to={menu?.link}
                             key={i}
                             className={` ${
                                 menu?.margin && "mt-5"}
@@ -42,4 +41,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default SideBar

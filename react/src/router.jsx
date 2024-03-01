@@ -1,26 +1,24 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
-import Users from "./views/Users";
 import NotFound from "./views/NotFound";
-import DefaultLayout from "./components/DefaultLayout";
 import GuestLayout from "./components/GuestLayout";
-import SideBar from "./views/SideBar";
-import Header from "./views/Header";
+import Dashboard from "./views/Dashboard";
+import App from "./App";
+import Goals from "./views/Goals";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <DefaultLayout />,
+        element: <App />,
         children: [
             {
-                path: '/sidebar',
-                element: <SideBar />
+                path: '/',
+                element: <Dashboard />
             },
-
             {
-                path: '/header',
-                element: <Header />
+                path: '/goals',
+                element: <Goals />
             },
         ]
     },

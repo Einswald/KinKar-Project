@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./views/Header";
 import SideBar from "./views/SideBar";
+import Login from "./views/Login";
 
 function App() {
 
@@ -10,12 +11,13 @@ function App() {
             <SideBar/>
             <div className="flex flex-col flex-1">
                 <Header/>
-                <div className="flex-1 overflow-auto">
+                <div className="flex-1 overflow-auto w-full">
                     <Outlet/>
                 </div>
             </div>
 
         </div>
+        <Login />
       </>
   )
 }

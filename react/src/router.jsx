@@ -4,8 +4,11 @@ import Signup from "./views/Signup";
 import NotFound from "./views/NotFound";
 import GuestLayout from "./components/GuestLayout";
 import Dashboard from "./views/Dashboard";
+import Kpis from "./views/kpis";
 import App from "./App";
 import Goals from "./views/Goals";
+import Surveys from "./views/Surveys";
+import Historys from "./views/Historys";
 
 const router = createBrowserRouter([
     {
@@ -17,8 +20,21 @@ const router = createBrowserRouter([
                 element: <Dashboard />
             },
             {
+                path: '/kpis',
+                element: <Kpis />
+            },
+            {
                 path: '/goals',
                 element: <Goals />
+            },
+
+            {
+                path: '/surveys',
+                element: <Surveys />
+            },
+            {
+                path: '/historys',
+                element: <Historys />
             },
         ]
     },

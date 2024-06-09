@@ -7,7 +7,33 @@ const ModalHistory = ({visible, onClose}) => {
 
     if (!visible) return null;
 
-  return (
+    const TABLE_Goals = ["No", "Kategori", "Keterangan", "Target", "Realisasi", "Bobot"];
+    const TABLE_Survey = ["No", "Keterangan", "Jawaban"];
+
+    const TABLE_ROWS_Goals = [
+        {
+            id: "2233",
+            no: "1",
+            category: "Waktu",
+            description: "Lalalla",
+            target: "",
+            realisasi: "",
+            bobot: "",
+       }
+    ];
+
+    const TABLE_ROWS_Surveys = [
+        {
+            no: "1",
+            description: "lalala",
+            answer: "sangat baik",
+        }
+    ];
+
+    const tdTable_goals = 'p-1 border-1 border-[#ffffff] font-serif text-center';
+    const tdTable_survey = 'p-1 border-2 border-[#DDE6ED] font-serif text-center';
+
+    return (
 
     <div
      onClick={handleOnClose}
@@ -22,49 +48,48 @@ const ModalHistory = ({visible, onClose}) => {
 
             {/* History Goals */}
             <h1 className='text-[28px] leading-[34px] font-bold cursor-pointer mb-3'>Your Goals</h1>
-
             <div className='flex flex-col bg-[#F0F3FF] bg-clip-border rounded-md w-full p-3 items-center'>
-
-                <table className='table-fixed border-collapse border-2 border-[#DDE6ED] w-9/12 '>
-                    <thead>
+                <table className='table-auto border-collapse border-2 border-[#DDE6ED] w-9/12 '>
+                    <thead className='rounded-md'>
                         <tr>
-                        <th className='p-1 border-1 border-[#ffffff] w-1/12 text-left'>No</th>
-                        <th className='p-1 border-1 border-[#ffffff] w-3/12 text-left'>Deskripsi</th>
-                        <th className='p-1 border-1 border-[#ffffff] w-2/12 text-left'>Kategori</th>
-                        <th className='p-1 border-1 border-[#ffffff] w-2/12 text-left'>Bobot</th>
-                        <th className='p-1 border-1 border-[#ffffff] w-2/12 text-left'>Target</th>
-                        <th className='p-1 border-1 border-[#ffffff] w-2/12 text-left'>Realisasi</th>
-
+                            {TABLE_Goals.map((header, index) => (
+                                <th key={index} className='p-1 border-1 border-[#ffffff]'>{header}</th>
+                            ))}
                         </tr>
                     </thead>
-                    <tbody className='h-1/5'>
-                        <tr>
-                        <td className='p-1 border-1 border-[#ffffff]'>1</td>
-                        <td className='p-1 border-1 border-[#ffffff]'>Indiana</td>
-                        <td className='p-1 border-1 border-[#ffffff]'>Indianapolis</td>
-                        <td className='p-1 border-1 border-[#ffffff]'></td>
-                        <td className='p-1 border-1 border-[#ffffff]'></td>
-                        <td className='p-1 border-1 border-[#ffffff]'></td>
-                        </tr>
+                    <tbody>
+                        {TABLE_ROWS_Goals.map((row, index) => (
+                            <tr key={index}>
+                                <td className={`${tdTable_goals} w-1/12`}>{row.no}</td>
+                                <td className={`${tdTable_goals} w-2/12`}>{row.category}</td>
+                                <td className={`${tdTable_goals} w-3/12`}>{row.description}</td>
+                                <td className={`${tdTable_goals} w-2/12`}>{row.target}</td>
+                                <td className={`${tdTable_goals} w-2/12`}>{row.realisasi}</td>
+                                <td className={`${tdTable_goals} w-2/12`}>{row.bobot}</td>
+                            </tr>
+                        ))}
                     </tbody>
-                    </table>
+                </table>
             </div>
             {/* History survey */}
             <h1 className='text-[28px] leading-[34px] font-bold cursor-pointer my-3'>Your Surveys</h1>
-
             <div className='flex flex-col bg-[#F0F3FF] bg-clip-border rounded-md w-full p-3 items-center'>
-                <table className='table-fixed border-collapse border-2 border-[#DDE6ED] w-6/12 '>
-                    <thead>
+                <table className='table-auto border-collapse border-2 border-[#DDE6ED] w-6/12 '>
+                    <thead className='rounded-md'>
                         <tr>
-                        <th className='p-2 border-2 border-[#DDE6ED] w-5/12 text-left'>Keterangan</th>
-                        <th className='p-2 border-2 border-[#DDE6ED] w-1/12 text-left'>Jawaban</th>
+                            {TABLE_Survey.map((header, index) => (
+                                <th key={index} className='p-1 border-2 border-[#DDE6ED]'>{header}</th>
+                            ))}
                         </tr>
                     </thead>
-                    <tbody className='h-1/5'>
-                        <tr>
-                        <td className='p-2 border-2 border-[#DDE6ED]'>1</td>
-                        <td className='p-2 border-2 border-[#DDE6ED]'>Indiana</td>
-                        </tr>
+                    <tbody>
+                        {TABLE_ROWS_Surveys.map((row, index) => (
+                            <tr key={index}>
+                                <td className={`${tdTable_survey} w-1/12`}>{row.no}</td>
+                                <td className={`${tdTable_survey} w-6/12`}>{row.description}</td>
+                                <td className={`${tdTable_survey} w-2/12`}>{row.answer}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>

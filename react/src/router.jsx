@@ -4,7 +4,7 @@ import Signup from "./views/Signup";
 import NotFound from "./views/NotFound";
 import GuestLayout from "./components/GuestLayout";
 import Dashboard from "./views/Dashboard";
-import Kpis from "./views/kpis";
+import Kpis from "./views/Kpis";
 import App from "./App";
 import Goals from "./views/Goals";
 import Surveys from "./views/Surveys";

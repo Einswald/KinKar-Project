@@ -15,7 +15,6 @@ function App() {
                     <Outlet/>
                 </div>
             </div>
-
         </div>
         <Login />
       </>

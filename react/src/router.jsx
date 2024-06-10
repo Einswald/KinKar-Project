@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import NotFound from "./views/NotFound";
@@ -9,6 +9,12 @@ import App from "./App";
 import Goals from "./views/Goals";
 import Surveys from "./views/Surveys";
 import Historys from "./views/Historys";
+import Admin from "./admin/Admin";
+import AdminDashboard from "./admin/AdminDashboard";
+import Department from "./admin/Department";
+import Schedule from "./admin/Schedule";
+import AdminKpis from "./admin/AdminKpis";
+import Recap from "./admin/Recap";
 
 const router = createBrowserRouter([
     {
@@ -16,43 +22,69 @@ const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                path: '/',
+                path: '',
                 element: <Dashboard />
             },
             {
-                path: '/kpis',
+                path: 'kpis',
                 element: <Kpis />
             },
             {
-                path: '/goals',
+                path: 'goals',
                 element: <Goals />
             },
-
             {
-                path: '/surveys',
+                path: 'surveys',
                 element: <Surveys />
             },
             {
-                path: '/historys',
+                path: 'historys',
                 element: <Historys />
             },
         ]
     },
+
+    {
+        path: '/admin',
+        element: <Admin />,
+        children: [
+            {
+                path: 'dashboard',
+                element: <AdminDashboard />
+            },
+            {
+                path: 'department',
+                element: <Department />
+            },
+            {
+                path: 'schedules',
+                element: <Schedule />
+            },
+            {
+                path: 'adminkpis',
+                element: <AdminKpis />
+            },
+            {
+                path: 'recap',
+                element: <Recap />
+            },
+        ]
+    },
+
     {
         path: '/',
         element: <GuestLayout />,
         children: [
             {
-                path: '/login',
+                path: 'login',
                 element: <Login />
             },
             {
-                path: '/signup',
+                path: 'signup',
                 element: <Signup />
             },
         ]
     },
-
 
     {
         path: '*',

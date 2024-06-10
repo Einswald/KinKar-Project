@@ -44,7 +44,6 @@ const SideBar = () => {
                     {menus?.map((menu, i) => (
                     <div key={i} >
                         <Link to={menu?.link}
-
                             className={` ${
                                 menu?.margin && "mt-5"}
                                 flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-600 rounded-md`}
@@ -60,7 +59,6 @@ const SideBar = () => {
                                 />
                             )}
                         </Link>
-
                             {menu.subMenus && subMenuOpen && open && (
                                 <ul>
                                     {menu.subMenus.map((subMenuItem, i) => (
@@ -70,18 +68,12 @@ const SideBar = () => {
                                         >
                                         <div className='mr-2'>{React.createElement(subMenuItem?.icon, {size: "15"})}</div>
                                         {subMenuItem.name}
-
-
                                         </Link>
                                     ))}
                                 </ul>
                             )}
-
                     </div>
-
                     ))}
-
-
                 </div>
             </div>
         </div>

@@ -15,6 +15,8 @@ import Department from "./admin/Department";
 import Schedule from "./admin/Schedule";
 import AdminKpis from "./admin/AdminKpis";
 import Recap from "./admin/Recap";
+import App_2 from "./App_2";
+import Register from "./views/Register";
 
 const router = createBrowserRouter([
     {
@@ -45,7 +47,7 @@ const router = createBrowserRouter([
     },
 
     {
-        path: '/admin',
+        path: '/',
         element: <Admin />,
         children: [
             {
@@ -73,23 +75,47 @@ const router = createBrowserRouter([
 
     {
         path: '/',
-        element: <GuestLayout />,
+        element: <App_2 />,
         children: [
             {
                 path: 'login',
-                element: <Login />
-            },
-            {
-                path: 'signup',
-                element: <Signup />
-            },
+                element: <Login/>
+            }
         ]
     },
+    
+    {
+        path: '/',
+        element: <Register/>,
+        children: [
+            {
+                path: 'Register',
+                element: <Register/>
+            }
+        ]
+    },
+
+    // {
+    //     path: '/',
+    //     element: <GuestLayout />,
+    //     children: [
+    //         {
+    //             path: 'login',
+    //             element: <Login />
+    //         },
+    //         {
+    //             path: 'signup',
+    //             element: <Signup />
+    //         },
+    //     ]
+    // },
 
     {
         path: '*',
         element: <NotFound />
-    },
+    }
+        
+    
 ])
 
 export default router;

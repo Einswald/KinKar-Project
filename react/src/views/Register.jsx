@@ -1,14 +1,9 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import React, { useRef, useState } from 'react';
-import { useStateContext } from '../contexts/ContextProvider';
-import axiosClient from '../axios-client';
-import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
     <div className='min-h-screen flex items-center justify-center'>
-      <div className='container mx-auto'>
+      <form className='container mx-auto'>
         <div className="flex w-6/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
           <div className="w-1/2 flex items-center justify-center p-2">
             <img src="asset/Logoo.png" alt="Logo" className="w-1/2 h-auto" />

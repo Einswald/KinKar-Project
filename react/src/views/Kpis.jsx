@@ -2,41 +2,52 @@ import React from 'react'
 
 const Kpis = () => {
 
-    const TABLE_HEAD = ["Keterangan", "Status Goals", "Status Surveys"];
-
-    const TABLE_ROWS = [
-        {
-            id: "2233",
-            description: "Triwulan 2",
-            status_goals: "",
-            status_survey: "",
-       }
+    const TABLE_GRADE_GOALS = [
+        {grade: "Sangat Baik", score: ">=90"},
+        {grade: "Baik", score: ">=75 - <90"},
+        {grade: "Cukup", score: ">=60 - <75"},
+        {grade: "Kurang", score: "<60"}
     ];
 
-    const tdTable = 'p-2 border-2 border-[#DDE6ED] font-serif' ;
+    const TABLE_GRADE_SURVEY = [
+        {grade: "Sangat Baik", score: "=35"},
+        {grade: "Baik", score: ">=28 - <35"},
+        {grade: "Cukup", score: ">=14 - <28"},
+        {grade: "Kurang", score: ">=7 - <14"}
+    ];
   return (
-    <div className='pt-6 px-6 md:pt-8 md:px-8'>
-        <h1 className='text-2xl md:text-2xl font-bold cursor-pointer text-left'>Your KPI Status</h1>
-        <div className='flex flex-col items-center bg-clip-border rounded-md w-full p-3 bg-[#F0F3FF]'>
-            <div className='overflow-x-auto w-7/12'>
-                <table className='table-fixed border-collapse border-2 border-[#DDE6ED] w-full'>
-                    <thead className='bg-[#92C7CF] rounded-md'>
-                        <tr>
-                            {TABLE_HEAD.map((header, index) => (
-                                <th key={index} className='p-1 border-1 border-[#DDE6ED] text-[#FFF7FC]'>{header}</th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {TABLE_ROWS.map((row, index) => (
+    <div className='pt-6 px-6 md:pt-8 md:px-4'>
+        <h1 className='text-2xl md:text-2xl font-bold cursor-pointer text-left'>Your Grade KPI</h1>
+        <div className='flex flex-col items-center bg-clip-border rounded-md w-full p-5 bg-[#F0F3FF] shadow-xl'>
+            <div className='flex w-full overflow-x-auto'>
+                <div className='w-1/2 p-2'>
+                <h2 className='mb-2 text-lg text-black font-semibold'>Grade KPI Survey</h2>
+                    <table className='table-auto text-center border-collapse border-2 border-[#DDE6ED] w-full'>
+                        <tbody>
+                            {TABLE_GRADE_SURVEY.map((row, index) => (
                             <tr key={index}>
-                                <td className={tdTable}>{row.description}</td>
-                                <td className={tdTable}>{row.status_goals}</td>
-                                <td className={tdTable}>{row.status_survey}</td>
+                                <td className='border border-[#DDE6ED] p-2'>{row.grade}</td>
+                                <td className='border border-[#DDE6ED] p-2'>{row.score}</td>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                            ))}
+
+                        </tbody>
+                    </table>
+                </div>
+                <div className='w-1/2 p-2'>
+                <h2 className='mb-2 text-lg text-black font-semibold'>Grade KPI Goals</h2>
+                    <table className='table-auto text-center border-collapse border-2 border-[#DDE6ED] w-full'>
+                        <tbody>
+                            {TABLE_GRADE_GOALS.map((row, index) => (
+                            <tr key={index}>
+                                <td className='border border-[#DDE6ED] p-2'>{row.grade}</td>
+                                <td className='border border-[#DDE6ED] p-2'>{row.score}</td>
+                            </tr>
+                            ))}
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

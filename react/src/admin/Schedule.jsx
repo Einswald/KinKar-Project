@@ -35,8 +35,8 @@ const Schedule = () => {
                     />
                     <FaSearch className='-ml-6 my-3 w-3 h-4 text-gray-400'/>
                 </div>
-                <div className='flex items-center justify-center'>
-                    <table className='mt-2 w-5/6 min-w-max table-auto text-left border-b border-[#DDE6ED]'>
+                <div className='flex items-center justify-center px-5'>
+                    <table className='mt-2 w-full min-w-max table-auto text-left border-b border-[#DDE6ED]'>
                         <thead className='bg-[#9DB2BF] rounded-md'>
                             <tr>
                                 {TABLE_HEAD.map((header, index) => (

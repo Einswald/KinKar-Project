@@ -6,7 +6,7 @@ import { CreateRecapModal, UpdateRecapModal, DeleteRecapModal } from './modal_ad
 
 const Recap = () => {
 
-    const TABLE_HEAD = ["No", "Id", "Name", "Department", "SurveyResult","GoalsResult","Total","Status", "Action"];
+    const TABLE_HEAD = ["No", "Id", "Name", "Department", "SurveyResult","GoalsResult","Status", "Action"];
 
     const TABLE_ROWS = [
         {
@@ -16,7 +16,6 @@ const Recap = () => {
             department: "manajemen",
             survey_result: "90",
             goals_result: "90",
-            total: "180",
             status: "",
        }
     ];
@@ -31,14 +30,14 @@ const Recap = () => {
         <div className='pt-6 px-6 md:pt-8 md:px-8'>
             <h1 className='text-2xl md:text-2xl font-bold cursor-pointer text-left'>Schedule</h1>
             <div className='flex flex-col rounded-md bg-[#F0F3FF]'>
-                <div className='flex items-start p-3'>
+                <div className='flex items-start p-5'>
                     <input type="text"
                         className='bg-white h-[40px] outlined-sm pl-[13px] w-[300px] rounded-xl placeholder:text-[14px] leading-[20px] font-normal'
                         placeholder='search for..'
                     />
                     <FaSearch className='-ml-6 my-3 w-3 h-4 text-gray-400'/>
                 </div>
-                <div className='flex items-center justify-center px-4'>
+                <div className='flex items-center justify-center px-5'>
                     <table className='mt-2 w-full min-w-max table-auto text-left border-b border-[#DDE6ED]'>
                         <thead className='bg-[#9DB2BF] rounded-md'>
                             <tr>
@@ -57,7 +56,6 @@ const Recap = () => {
                                     <td className={tdTable}>{row.department}</td>
                                     <td className={tdTable}>{row.survey_result}</td>
                                     <td className={tdTable}>{row.goals_result}</td>
-                                    <td className={tdTable}>{row.total}</td>
                                     <td className={tdTable}>{row.status}</td>
                                     <td className={tdTable}>
                                         <button className='text-blue-500 py-1 mr-3' onClick={() => setShowModalUpdate(true)}>

@@ -15,8 +15,11 @@ import Department from "./admin/Department";
 import Schedule from "./admin/Schedule";
 import AdminKpis from "./admin/AdminKpis";
 import Recap from "./admin/Recap";
-import App_2 from "./App_2";
 import Register from "./views/Register";
+import Profile from "./views/Profile";
+import AdminGoals from "./admin/AdminGoals";
+import AdminSurveys from "./admin/AdminSurveys";
+import App_2 from "./App_2";
 
 const router = createBrowserRouter([
     {
@@ -67,6 +70,14 @@ const router = createBrowserRouter([
                 element: <AdminKpis />
             },
             {
+                path: 'admingoals',
+                element: <AdminGoals />
+            },
+            {
+                path: 'adminsurveys',
+                element: <AdminSurveys />
+            },
+            {
                 path: 'recap',
                 element: <Recap />
             },
@@ -80,17 +91,29 @@ const router = createBrowserRouter([
             {
                 path: 'login',
                 element: <Login/>
+            },
+
+        ]
+    },
+
+    {
+        path: '/',
+        element: <Register />,
+        children: [
+            {
+                path: 'register',
+                element: <Register/>
             }
         ]
     },
-    
+
     {
         path: '/',
-        element: <Register/>,
+        element: <Profile />,
         children: [
             {
-                path: 'Register',
-                element: <Register/>
+                path: 'profile',
+                element: <Profile/>
             }
         ]
     },
@@ -114,8 +137,8 @@ const router = createBrowserRouter([
         path: '*',
         element: <NotFound />
     }
-        
-    
+
+
 ])
 
 export default router;

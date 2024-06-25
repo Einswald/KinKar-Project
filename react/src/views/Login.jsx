@@ -51,9 +51,6 @@ function Login() {
 
   };
 
-import React from 'react'
-import { useNavigate, Link } from 'react-router-dom';
-
 const Login = () => {
 
     const navigate = useNavigate();
@@ -101,12 +98,13 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </form>
+    </div>
   )
 
   function handleClick() {
     navigate("/register");
   }
+}
 }
 
 export default Login

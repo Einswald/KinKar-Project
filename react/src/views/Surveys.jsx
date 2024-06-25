@@ -5,8 +5,6 @@ const Surveys = () => {
 
     const [ShowHistorySurveys, setShowHistorySurveys] = useState(false);
 
-    const [selectedOption, setSelectedOption] = useState(null);
-
     const [selectedOptions, setSelectedOptions] = useState({
         '1': null,
     });
@@ -34,35 +32,34 @@ const Surveys = () => {
         {
             id: "1",
             no: "1",
-            category: "as",
-            description: "lalalala"
+            category: "Kualitas Kerja",
+            description: "Tingkat akurasi, ketelitian, dan perhatian terhadap detail pekerjaan"
         }
     ];
 
     const tdTable = 'p-2 border-2 border-[#DDE6ED] font-serif';
 
     return (
-      <div className='pt-6 px-6 md:pt-8 md:px-8'>
+      <div className='pt-6 px-6 md:pt-8 md:px-4'>
         <h1 className='text-2xl md:text-2xl font-bold cursor-pointer text-left'>Your Surveys</h1>
-
-        <div className='flex flex-col items-center bg-clip-border rounded-md w-full p-3 bg-[#F0F3FF]'>
-           <div className='w-8/12 overflow-x-auto'>
-                <table className=' table-auto border-collapse border-2 border-[#DDE6ED] w-full'>
-                    <thead className='bg-[#92C7CF] rounded-md'>
+        <div className='flex flex-col items-center bg-clip-border rounded-md w-full p-3 bg-[#F0F3FF] shadow-xl'>
+           <div className='w-full overflow-x-auto'>
+                <table className=' table-auto text-center border-collapse border-2 border-[#DDE6ED] w-full'>
+                    <thead>
                         <tr>
                             {TABLE_HEAD.map((header, index) => (
-                                <th key={index} className='p-1 border-1 border-[#DDE6ED] text-[#FFF7FC]'>{header}</th>
+                                <th key={index} className='p-1 border-2 border-[#DDE6ED]'>{header}</th>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
                         {TABLE_ROWS.map((row) => (
                             <tr key={row.id}>
-                                <td className={`${tdTable} w-1/12`}>{row.no}</td>
-                                <td className={`${tdTable} w-2/12`}>{row.category}</td>
-                                <td className={`${tdTable} w-4/12`}>{row.description}</td>
+                                <td className={`${tdTable} w-[2%]`}>{row.no}</td>
+                                <td className={`${tdTable} w-[10%]`}>{row.category}</td>
+                                <td className={`${tdTable} w-[20%]`}>{row.description}</td>
                                 {options.map(option => (
-                                <td key={option.id} className={`${tdTable} w-1/12`}>
+                                <td key={option.id} className={`${tdTable} w-[5%]`}>
                                     <RadioButton
                                         name={row.id}
                                         value={option.id.toUpperCase()}

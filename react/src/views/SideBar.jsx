@@ -23,7 +23,7 @@ const menus =[
         ],
     },
     {name:"Historys",link:'/historys',icon: FaHistory },
-    {name:"Log Out",link:'/',icon: MdLogout, margin: true},
+    {name:"Log Out",link:'login',icon: MdLogout, margin: true},
 ];
 
 const SideBar = () => {

@@ -5,7 +5,7 @@ const Goals = () => {
 
     const [ShowHistoryGoals, setShowHistoryGoals] = useState(false);
 
-    const TABLE_HEAD = ["No", "Kategori", "Keterangan", "Target", "Realisasi", "Bobot"];
+    const TABLE_HEAD = ["No", "Category", "Description", "Target", "Realisasi", "Bobot"];
 
     const TABLE_ROWS = [
         {
@@ -29,28 +29,28 @@ const Goals = () => {
     );
 
     return (
-        <div className='pt-6 px-6 md:pt-8 md:px-8'>
+        <div className='pt-6 px-6 md:pt-8 md:px-4'>
             <h1 className='text-2xl md:text-2xl font-bold cursor-pointer text-left'>Your Goals</h1>
 
-            <div className='flex flex-col items-center bg-clip-border rounded-md w-full p-3 bg-[#F0F3FF]'>
-                <div className='w-9/12 overflow-x-auto'>
-                    <table className='table-auto border-collapse border-2 border-[#DDE6ED] w-full'>
-                        <thead className='bg-[#92C7CF] rounded-md'>
+            <div className='flex flex-col items-center bg-clip-border rounded-md w-full p-5 bg-[#F0F3FF] shadow-xl'>
+                <div className='w-full overflow-x-auto'>
+                    <table className='table-auto text-center border-collapse border-2 border-[#DDE6ED] w-full'>
+                        <thead>
                             <tr>
                                 {TABLE_HEAD.map((header, index) => (
-                                    <th key={index} className='p-1 border-1 border-[#ffffff] text-[#FFF7FC]'>{header}</th>
+                                    <th key={index} className='p-1 border-1 border-[#ffffff] '>{header}</th>
                                 ))}
                             </tr>
                         </thead>
                         <tbody>
                             {TABLE_ROWS.map((row, index) => (
                                 <tr key={index}>
-                                    <td className={`${tdTable} w-1/12`}>{row.no}</td>
-                                    <td className={`${tdTable} w-2/12`}>{row.category}</td>
-                                    <td className={`${tdTable} w-3/12`}>{row.description}</td>
-                                    <td className={`${tdTable} w-2/12`}>{row.target}<InputCell /></td>
-                                    <td className={`${tdTable} w-2/12`}>{row.realisasi}<InputCell /></td>
-                                    <td className={`${tdTable} w-2/12`}>{row.bobot}<InputCell /></td>
+                                    <td className={`${tdTable} w-[5%]`}>{row.no}</td>
+                                    <td className={`${tdTable} w-[20%]`}>{row.category}</td>
+                                    <td className={`${tdTable} w-[20%]`}>{row.description}</td>
+                                    <td className={`${tdTable} w-[15%]`}>{row.target}<InputCell /></td>
+                                    <td className={`${tdTable} w-[15%]`}>{row.realisasi}<InputCell /></td>
+                                    <td className={`${tdTable} w-[15%]`}>{row.bobot}<InputCell /></td>
                                 </tr>
                             ))}
                         </tbody>

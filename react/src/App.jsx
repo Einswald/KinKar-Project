@@ -7,7 +7,7 @@ function App() {
 
   return (
       <>
-        <div className="flex flex-row h-screen w-screen overflow-hidden">
+        <div className="flex flex-row h-screen w-screen overflow-hidden ">
             <SideBar/>
             <div className="flex flex-col flex-1">
                 <Header/>
